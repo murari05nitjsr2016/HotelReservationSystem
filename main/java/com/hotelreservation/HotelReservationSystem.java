@@ -1,17 +1,21 @@
 package com.hotelreservation;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class HotelReservationSystem {
+List<Hotel> hotelList = new ArrayList<>();
+
+public boolean addHotel(){
+    Hotel hotel = new Hotel();
+   boolean isAdded =  hotelList.add(hotel);
+   return isAdded;
+}
 
     public static void main (String[] args){
         System.out.println("Welcome in Hotel Reservation System");
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Hotel Name");
-        String hotelName = sc.next();
-        System.out.println("Enter the  Hotel Rates for Regular Customer");
-        float nRate = sc.nextFloat();
-
-
+        HotelReservationSystem hotelReservationSystem = new HotelReservationSystem();
+        hotelReservationSystem.addHotel();
     }
 }
