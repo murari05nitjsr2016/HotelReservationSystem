@@ -8,13 +8,13 @@ public class Hotel {
     Integer weekendRates;
     public Hotel() {
     }
-    public Hotel(String hotelName, Integer regularCustomerRate ) {
+    public Hotel(String hotelName, Integer weekDayRate ) {
       this.hotelName = hotelName;
-       this.weekDayRate = regularCustomerRate;
+       this.weekDayRate = weekDayRate;
     }
-    public Hotel(String hotelName, Integer regularCustomerRate, Integer weekendRates) {
+    public Hotel(String hotelName, Integer weekDayRate, Integer weekendRates) {
         this.hotelName = hotelName;
-        this.weekDayRate = regularCustomerRate;
+        this.weekDayRate = weekDayRate;
         this.weekendRates = weekendRates;
     }
 
@@ -22,27 +22,25 @@ public class Hotel {
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
-                ", regularCustomerRate=" + weekDayRate +
+                ", weekDayRate=" + weekDayRate +
+                ", weekendRates=" + weekendRates +
                 '}';
     }
 
     public String getHotelName() {
-
         return hotelName;
     }
 
     public void setHotelName(String hotelName) {
-
         this.hotelName = hotelName;
     }
 
-    public Integer getRegularCustomerRate() {
+    public Integer getWeekDayRate() {
         return weekDayRate;
     }
 
-    public void setRegularCustomerRate(Integer regularCustomerRate) {
-
-        this.weekDayRate = regularCustomerRate;
+    public void setWeekDayRate(Integer weekDayRate) {
+        this.weekDayRate = weekDayRate;
     }
 
     public Integer getWeekendRates() {
