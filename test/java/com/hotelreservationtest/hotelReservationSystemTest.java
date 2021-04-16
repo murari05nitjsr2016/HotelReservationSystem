@@ -1,15 +1,19 @@
 package com.hotelreservationtest;
 
+import com.hotelreservation.Hotel;
 import com.hotelreservation.HotelReservationSystem;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class hotelReservationSystemTest {
+
     @Test
-    public void provideAll3InformationsWhenAddedShouldReturnTrue()
+    public void provideAllInformationsWhenAddedShouldReturnTrue()
     {
         HotelReservationSystem hotelReservationSystem = new HotelReservationSystem();
-        boolean result =   hotelReservationSystem.addHotel();
+        Hotel hotel = new Hotel("LakeWood",110);
+        boolean result =  hotelReservationSystem.addHotel(hotel);
         Assertions.assertTrue(result);
     }
+
 }
