@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import static com.hotelreservation.HotelReservationSystem.*;
 import static com.hotelreservation.HotelReservationSystem.cheapestHotel;
 
 public class hotelReservationSystemTest {
@@ -24,12 +25,32 @@ public class hotelReservationSystemTest {
     @Test
     public void InGivenDateSlotShouldReturnChepeastHotelName() throws ParseException {
         HotelReservationSystem hotelReservationSystem = new HotelReservationSystem();
+        Hotel hotel1 = new Hotel("LakeWood",110);
+        Hotel hotel2 = new Hotel("BridgeWood",150);
+        hotelReservationSystem. addHotel(hotel1);
+        hotelReservationSystem. addHotel(hotel2);
         String startingDate = "10sep2020";
         String lastDate = "11sep2020";
-        ArrayList<Hotel> hotelList = new ArrayList<>();
-        Hotel hotel =  cheapestHotel(hotelList,startingDate,lastDate);
-        Assertions.assertEquals("LakeWood",hotel);
+        Hotel hotel = cheapestHotel(hotelList,startingDate,lastDate);
+        Assertions.assertEquals("LakeWood",hotel.getHotelName());
         
+    }
+    @Test
+    public void provideAllInformationsWhenAddedWeekendRateShouldReturnTrue()
+    {
+        HotelReservationSystem hotelReservationSystem = new HotelReservationSystem();
+        Hotel hotel = new Hotel("LakeWood",110,90);
+        boolean result =  hotelReservationSystem.addHotel(hotel);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void provideAllInformationsWhenAddedWeekendRateShouldReturnFalse()
+    {
+        HotelReservationSystem hotelReservationSystem = new HotelReservationSystem();
+        Hotel hotel = new Hotel("LakeWood",110,90);
+        boolean result =  hotelReservationSystem.addHotel(hotel);
+        Assertions.assertFalse(result);
     }
 
 }
